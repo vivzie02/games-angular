@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToggleService } from './toggle.service';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class SidebarMenuComponent {
 
+  constructor(public toggleService: ToggleService){}
 }
