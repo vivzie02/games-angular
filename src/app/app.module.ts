@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BackgammonComponent } from './games/backgammon/backgammon.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     NavbarComponent,
     SidebarMenuComponent,
+    BackgammonComponent,
   ],
   imports: [
     BrowserModule,

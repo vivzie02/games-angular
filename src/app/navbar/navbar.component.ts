@@ -31,6 +31,9 @@ export class NavbarComponent {
 
         if (result.matches) {
           this.switchButtons();
+          if(this.toggleService.isExpanded){
+            this.toggleService.toggleSideNav();
+          }
         }
 
       });

@@ -1,5 +1,5 @@
 <mat-toolbar style="background-color: rgb(143, 180, 211); height: 80px">
-    <button *ngIf="!showButtons" aria-label="menu button" mat-fab id="menu-button" (click)="toggleSidenav()">
+    <button *ngIf="!showButtons" aria-label="menu button" mat-fab (click)="toggleSidenav()" style="background-color: rgb(135, 111, 201);">
         <mat-icon fontIcon="menu"></mat-icon>
     </button>
     <span *ngIf="showButtons">
