@@ -1,7 +1,0 @@
-<mat-sidenav-container class="sidenav-outer" autosize>
-    <mat-drawer mode="side" [opened]="toggleService.isExpanded" class="sidenav">
-        <div *ngFor="let option of getOptions()">
-            <button mat-button class="center-button" (click)=option.clickHandler()>{{option.name}}</button>
-        </div> 
-    </mat-drawer>
-</mat-sidenav-container>

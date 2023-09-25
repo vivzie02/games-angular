@@ -9,7 +9,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BackgammonComponent } from './games/backgammon/backgammon.component';
@@ -19,7 +18,6 @@ import { BackgammonComponent } from './games/backgammon/backgammon.component';
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    SidebarMenuComponent,
     BackgammonComponent,
   ],
   imports: [
@@ -30,7 +28,7 @@ import { BackgammonComponent } from './games/backgammon/backgammon.component';
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

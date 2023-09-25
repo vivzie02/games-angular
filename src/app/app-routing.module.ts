@@ -5,7 +5,7 @@ import { BackgammonComponent } from './games/backgammon/backgammon.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
-  { path: 'games/backgammon', component: BackgammonComponent}
+  { path: 'games/backgammon', component: BackgammonComponent},
 ];
 
 @NgModule({

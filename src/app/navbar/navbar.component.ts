@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ToggleService } from '../sidebar-menu/toggle.service';
+import { ToggleService } from './toggle.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 export class NavbarComponent {
   private _showButtons: boolean = true;
 
-  constructor(private toggleService: ToggleService, private responsive: BreakpointObserver){}
+  constructor(private toggleService: ToggleService, private responsive: BreakpointObserver, private router: Router){}
 
   get showButtons(): boolean{
     return this._showButtons;

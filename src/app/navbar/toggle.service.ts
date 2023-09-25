@@ -10,6 +10,12 @@ export class ToggleService {
   private _isExpanded: boolean = false;
 
   toggleSideNav(){
+    if(this._isExpanded){
+      console.log("closing sidenav");
+    }
+    else{
+      console.log("Opening sidenav");
+    }
     this._isExpanded = !this._isExpanded;
   }
 

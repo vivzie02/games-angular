@@ -5,8 +5,15 @@
   </head>
 
   <body>
-    <app-navbar></app-navbar>
-    <app-sidebar-menu></app-sidebar-menu>
-    <router-outlet></router-outlet>
+    <mat-drawer-container class="sidenav-outer" autosize>
+      <mat-drawer mode="over" [opened]="getToggleService.isExpanded" class="sidenav">
+          <button mat-button class="center-button">Games</button>
+          <button mat-button class="center-button">Profile</button>
+      </mat-drawer>
+      <mat-drawer-content>
+        <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
   </body>
 </html>
