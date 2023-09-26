@@ -1,19 +1,6 @@
-#menu-button{
-    display: none;
-}
-
-@media screen and (max-width: 900px) {
-    #menu-button{
-        background-color: gray;
-        margin: .5%;
-        display: block;
-    }
-
-    .game-selector{
-        display: none;
-    }
-}
-
-.game-selector{
-    display: block;
+.menuButton{
+    background-color: rgb(189, 195, 206); 
+    margin: 5px;
+    width: 150px;
+    height: 40px;
 }
