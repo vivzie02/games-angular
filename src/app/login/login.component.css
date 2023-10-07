@@ -1,0 +1,19 @@
+.center{
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.login{
+    display: block;
+    margin: 30px auto;
+    width: 50%;
+    height: auto;
+}
+
+.login-handheld{
+    display: block;
+    margin: auto;
+    width: 90%;
+    height: auto;
+}

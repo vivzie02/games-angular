@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToggleService } from '../services/toggle.service';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +10,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  loginForm = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+  })
 
+  cardClass: string = "login";
+
+  constructor(private router: Router, private toggleService: ToggleService, private responsive: BreakpointObserver){}
+  
+  login(){
+    //TO-DO: call to authenticator service 
+    //if login is successful, receive a authentication token.
+    localStorage.setItem('token', Math.random().toString());
+    this.router.navigate(['games']);
+  }
+
+  ngOnInit() {
+  
+    this.responsive.observe(Breakpoints.HandsetPortrait)
+      .subscribe(result => {
+
+        if (result.matches) {
+          this.cardClass = "login-handheld";
+        }
+        else{
+          this.cardClass = "login";
+        }
+
+      });
+  }
 }

@@ -1,3 +1,17 @@
-<div style="height: max-content; width: max-content;">
-    
-</div>
+<mat-card class="{{cardClass}}">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-card-content>
+            <!--add form validation later-->
+            <mat-form-field hintLabel="Max 10 characters" class="center">
+                <mat-label>Username</mat-label>
+                <input matInput #input maxlength="10">
+                <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+            </mat-form-field><br>
+            <mat-form-field class="center">
+                <mat-label>Password</mat-label>
+                <input matInput type="password">
+            </mat-form-field><br>
+            <button mat-button class="center">Login</button>
+        </mat-card-content>
+    </form>
+</mat-card>

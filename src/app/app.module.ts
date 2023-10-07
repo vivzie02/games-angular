@@ -12,6 +12,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BackgammonComponent } from './games/backgammon/backgammon.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { GamesComponent } from './games/games.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +25,7 @@ import { BackgammonComponent } from './games/backgammon/backgammon.component';
     LoginComponent,
     NavbarComponent,
     BackgammonComponent,
+    GamesComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,12 @@ import { BackgammonComponent } from './games/backgammon/backgammon.component';
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

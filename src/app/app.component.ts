@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToggleService } from './navbar/toggle.service';
+import { ToggleService } from './services/toggle.service';
 
 @Component({
   selector: 'app-root',

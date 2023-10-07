@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToggleService } from './toggle.service';
+import { ToggleService } from '../services/toggle.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 
