@@ -26,17 +26,16 @@ export class NavbarComponent {
   }
 
   ngOnInit() {
-  
-    this.responsive.observe(Breakpoints.HandsetLandscape)
-      .subscribe(result => {
-
-        if (result.matches) {
-          this.switchButtons();
-          if(this.toggleService.isExpanded){
-            this.toggleService.toggleSideNav();
-          }
+    this.responsive.observe(Breakpoints.HandsetPortrait).subscribe(result => {
+      if (result.matches) {
+        this._showButtons = false;
+      }
+      else{
+        this._showButtons = true;
+        if (this.toggleService.isExpanded) {
+          this.toggleService.toggleSideNav();
         }
-
-      });
+      }
+    });
   }
 }

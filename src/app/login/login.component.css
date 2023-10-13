@@ -6,7 +6,7 @@
 
 .login{
     display: block;
-    margin: 30px auto;
+    margin: 30px;
     width: 50%;
     height: auto;
 }
@@ -14,6 +14,40 @@
 .login-handheld{
     display: block;
     margin: auto;
-    width: 90%;
+    width: 100%;
     height: auto;
+}
+
+.col{
+    width: 50%;
+    flex: 1;
+}
+
+#loginButton{
+    background-color: rgb(180, 166, 166);
+}
+
+.img-container{
+    width: 50%;
+    height: 90vh;
+    background-image: url('https://media.timeout.com/images/105627949/image.jpg');
+    background-size: cover; 
+    background-position: center center; 
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    flex: 1;
+}
+
+.text {
+    padding-left: 10px;
+    padding-right: 10px;
 }

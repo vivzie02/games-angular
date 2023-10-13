@@ -1,17 +1,51 @@
-<mat-card class="{{cardClass}}">
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <mat-card-content>
-            <!--add form validation later-->
-            <mat-form-field hintLabel="Max 10 characters" class="center">
-                <mat-label>Username</mat-label>
-                <input matInput #input maxlength="10">
-                <mat-hint align="end">{{input.value.length}}/10</mat-hint>
-            </mat-form-field><br>
-            <mat-form-field class="center">
-                <mat-label>Password</mat-label>
-                <input matInput type="password">
-            </mat-form-field><br>
-            <button mat-button class="center">Login</button>
-        </mat-card-content>
-    </form>
-</mat-card>
+<div style="display: flex;">
+    <mat-card class="{{cardClass}}" class="col">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <mat-card-content>
+                <!--add form validation later-->
+                <mat-form-field hintLabel="Max 10 characters" class="center">
+                    <mat-icon matPrefix>person_outline</mat-icon>
+                    <mat-label>Username</mat-label>
+                    <input matInput #input maxlength="10" formControlName="username" required="true" minlength="3" name="username">
+                    <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+                </mat-form-field>
+                <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+                    <div *ngIf="loginForm.get('username')?.errors?.['required']" class="center" style="color: red;">
+                        *username is required.
+                    </div>
+                    <div *ngIf="loginForm.get('username')?.errors?.['minlength']" class="center" style="color: red;">
+                        *username has to have more at least 3 characters.
+                    </div>
+                </div>
+                <mat-form-field class="center">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" 
+                        formControlName="password" [type]="showPassword ? 'text' : 'password'" required="true"
+                        minlength="5" name="password">
+                    <mat-icon matSuffix class="placeholder" (click)="hideShowPassword()">{{showPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+                </mat-form-field>
+                <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                    <div *ngIf="loginForm.get('password')?.errors?.['required']" class="center" style="color: red;">
+                        *password is required.
+                    </div>
+                    <div *ngIf="loginForm.get('password')?.errors?.['minlength']" class="center" style="color: red;">
+                        *password has to be longer than 4 characters.
+                    </div>
+                </div>
+                <button mat-button class="center" id="loginButton">Login</button>
+            </mat-card-content>
+        </form>
+
+        <br><br>
+
+        <div class="container">
+            <div class="line"><mat-divider></mat-divider></div>
+            <div class="text mat-typography">OR</div>
+            <div class="line"><mat-divider></mat-divider></div>
+        </div>
+
+        
+    </mat-card>
+    <!--Change image later-->
+    <div class="img-container" *ngIf="showImage"></div>
+</div>

@@ -16,10 +16,20 @@ export class LoginComponent {
   })
 
   cardClass: string = "login";
+  showImage: boolean = true;
+  showPassword: boolean = false;
 
   constructor(private router: Router, private toggleService: ToggleService, private responsive: BreakpointObserver){}
   
+  hideShowPassword(){
+    this.showPassword = !this.showPassword;
+  }
+
   login(){
+    if(this.loginForm.get('username')?.errors || this.loginForm.get('password')?.errors){
+      return;
+    }
+
     //TO-DO: call to authenticator service 
     //if login is successful, receive a authentication token.
     localStorage.setItem('token', Math.random().toString());
@@ -27,17 +37,17 @@ export class LoginComponent {
   }
 
   ngOnInit() {
-  
+
     this.responsive.observe(Breakpoints.HandsetPortrait)
       .subscribe(result => {
-
         if (result.matches) {
           this.cardClass = "login-handheld";
+          this.showImage = false;
         }
         else{
           this.cardClass = "login";
+          this.showImage = true;
         }
-
       });
   }
 }
