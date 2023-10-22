@@ -37,7 +37,6 @@ export class LoginComponent {
   }
 
   ngOnInit() {
-
     this.responsive.observe(Breakpoints.HandsetPortrait)
       .subscribe(result => {
         if (result.matches) {
