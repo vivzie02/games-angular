@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToggleService } from '../services/toggle.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent {
   showImage: boolean = true;
   showPassword: boolean = false;
 
-  constructor(private router: Router, private toggleService: ToggleService, private responsive: BreakpointObserver){}
+  constructor(private router: Router, private toggleService: ToggleService, private responsive: BreakpointObserver, private loginService: LoginService){}
   
   hideShowPassword(){
     this.showPassword = !this.showPassword;
@@ -30,10 +31,12 @@ export class LoginComponent {
       return;
     }
 
-    //TO-DO: call to authenticator service 
-    //if login is successful, receive a authentication token.
-    localStorage.setItem('token', Math.random().toString());
-    this.router.navigate(['games']);
+    var username = this.loginForm.get('username')?.value || "";
+    var password = this.loginForm.get('password')?.value || "";
+
+    if(this.loginService.login(username, password)){
+      this.router.navigate(['games']);
+    }
   }
 
   ngOnInit() {
