@@ -1,8 +1,7 @@
-<div style="display: flex;">
+<div style="display: flex; background-color: aliceblue;">
     <mat-card class="{{cardClass}}" class="col">
         <form [formGroup]="loginForm" (ngSubmit)="login()">
             <mat-card-content>
-                <!--add form validation later-->
                 <mat-form-field hintLabel="Max 10 characters" class="center">
                     <mat-icon matPrefix>person_outline</mat-icon>
                     <mat-label>Username</mat-label>

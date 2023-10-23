@@ -16,14 +16,26 @@ export class LoginComponent {
     password: new FormControl(''),
   })
 
-  cardClass: string = "login";
-  showImage: boolean = true;
-  showPassword: boolean = false;
+  private _cardClass: string = "login";
+  private _showImage: boolean = true;
+  private _showPassword: boolean = false;
 
   constructor(private router: Router, private toggleService: ToggleService, private responsive: BreakpointObserver, private loginService: LoginService){}
+
+  get showPassword(): boolean{
+    return this._showPassword;
+  }
+  
+  get showImage(): boolean{
+    return this._showImage;
+  }
+
+  get cardClass(): string{
+    return this._cardClass;
+  }
   
   hideShowPassword(){
-    this.showPassword = !this.showPassword;
+    this._showPassword = !this._showPassword;
   }
 
   login(){
@@ -43,12 +55,12 @@ export class LoginComponent {
     this.responsive.observe(Breakpoints.HandsetPortrait)
       .subscribe(result => {
         if (result.matches) {
-          this.cardClass = "login-handheld";
-          this.showImage = false;
+          this._cardClass = "login-handheld";
+          this._showImage = false;
         }
         else{
-          this.cardClass = "login";
-          this.showImage = true;
+          this._cardClass = "login";
+          this._showImage = true;
         }
       });
   }
