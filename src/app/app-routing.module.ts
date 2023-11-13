@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { BackgammonComponent } from './games/backgammon/backgammon.component';
 import { GamesComponent } from './games/games.component';
-import { authGuard } from './services/auth.guard';
+import { authGuard } from './services/Authentication/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },

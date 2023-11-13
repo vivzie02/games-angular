@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToggleService } from '../services/toggle.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -46,9 +46,7 @@ export class LoginComponent {
     var username = this.loginForm.get('username')?.value || "";
     var password = this.loginForm.get('password')?.value || "";
 
-    if(this.loginService.login(username, password)){
-      this.router.navigate(['games']);
-    }
+    this.loginService.login(username, password)
   }
 
   ngOnInit() {

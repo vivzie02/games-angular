@@ -27,6 +27,11 @@
     background-color: rgb(180, 166, 166);
 }
 
+button.link { 
+    background:none; border:none; 
+    cursor: pointer;
+}
+
 .img-container{
     width: 50%;
     height: 90vh;
